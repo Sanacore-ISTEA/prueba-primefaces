@@ -3,7 +3,7 @@ pipeline {
   environment{
     ServidorMaster="ServidorSSH"
     ServidorDeploy="192.168.0.79"
-    PathDeploy="/home/deploy"
+    PathDeploy="/opt/tomcat/apache-tomcat-9.0.64/webapps"
   }
   stages {
     stage('Test'){
