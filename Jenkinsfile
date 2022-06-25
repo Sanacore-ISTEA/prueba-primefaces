@@ -3,7 +3,7 @@ pipeline {
   environment{
     ServidorMaster="ServidorSSH"
     ServidorDeploy="192.168.0.79"
-    PathDeploy="/opt/tomcat/apache-tomcat-9.0.64/webapps"
+    PathDeploy="/home/to_implement"
   }
   stages {
     stage('Test'){
@@ -55,7 +55,7 @@ pipeline {
             remote.user = userName
             remote.identityFile = identity
             //DEPLOY TO WAR
-            writeFile file: 'deploy.sh', text: "cp -i /home/to_implement/war/*.war ${env.PathDeploy} \n sleep 2m"
+            writeFile file: 'deploy.sh', text: "cp -i /home/to_implement/war/*.war /opt/tomcat/apache-tomcat-9.0.64/webapps \n sleep 2m"
             //sshCommand remote: remote, command: "/opt/tomcat/apache-tomcat-9.0.64/bin/shutdown.sh"
             //sshCommand remote: remote, command: "/opt/tomcat/apache-tomcat-9.0.64/bin/startup.sh"
 
