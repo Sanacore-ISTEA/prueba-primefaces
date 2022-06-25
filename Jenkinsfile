@@ -16,11 +16,11 @@ pipeline {
         sh 'mvn package'
       }
     }
-//    stage('Entrega de Artefactos') {
-//      steps {
-//        archiveArtifacts 'target/jsf-text.war'
- //     }
-//    }
+    stage('Entrega de Artefactos') {
+      steps {
+        archiveArtifacts 'target/prueba-primefaces.war'
+      }
+    }
     // stage('SonarQube Analysis'){
     //   steps{
     //     withSonarQubeEnv(installationName: 'Sonarqube', credentialsId: 'token-sonarqube') {
