@@ -56,7 +56,9 @@ pipeline {
             remote.identityFile = identity
             //DEPLOY TO WAR
             writeFile file: 'deploy.sh', text: "cp /home/to_implement/war/*.war ${env.PathDeploy} \n sleep 1m"
-            sshScript remote: remote, script: 'deploy.sh'
+            sshScript remote: remote, script: '/opt/tomcat/apache-tomcat-9.0.64/bin/shutdown.sh'
+            sshScript remote: remote, script: '/opt/tomcat/apache-tomcat-9.0.64/bin/startup.sh'
+
           }
         }
       }
