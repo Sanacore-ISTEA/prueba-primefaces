@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
+
+    <h:head>
+        <title>Esta es la pagina de inicio</title>
+    </h:head>
+    <h:body>
+    	<p:layout fullPage="true">
+ 
+		    <p:layoutUnit position="north" size="100" header="Encabezado" >
+		        <h:outputText value="Aplicacion Ejemplo primefaces" />
+		    </p:layoutUnit>
+		 
+		    <p:layoutUnit position="south" size="100" header="Bottom" >
+		        <h:outputText value="South unit content." />
+		    </p:layoutUnit>
+		 
+		   
+		    <p:layoutUnit position="east" size="300" header="Right">
+		        <h:outputText value="Right unit content." />
+		    </p:layoutUnit>
+		 
+		    <p:layoutUnit position="center">
+		       <h:form id="form">
+		       		<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+				    <h:panelGrid columns="2" cellpadding="5">
+				        <h:outputLabel  value="Usuario" style="font-weight:bold" />
+				        <p:inputText id="usuario" value="#{loginBean.usuario}" />
+				        
+				        <h:outputLabel  value="Pass:" style="font-weight:bold" />
+				        <p:password id="pass" value="#{loginBean.pass}" />
+				        
+				        <p:commandButton value="Submit" update=":form" 
+				        	icon="ui-icon-check" action="#{loginBean.iniciarSesion()}" />
+		    		</h:panelGrid>
+				</h:form>
+		    </p:layoutUnit>
+		 
+		</p:layout>
+    </h:body>
+</html>

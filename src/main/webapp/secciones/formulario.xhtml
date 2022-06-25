@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
+
+    <h:head>
+        <title>Formulario</title>
+    </h:head>
+    <h:body>
+    	<p:layout fullPage="true">
+		    <p:layoutUnit position="north" size="100" header="Encabezado" >
+		        <h:outputText value="Aplicacion Ejemplo primefaces" />
+		    </p:layoutUnit>
+		 
+		    <p:layoutUnit position="south" size="100" header="Bottom" >
+		        <h:outputText value="South unit content." />
+		    </p:layoutUnit>
+		 
+		   
+		    <p:layoutUnit position="east" size="300" header="Right">
+		        <h:outputText value="Right unit content." />
+		        <h:form>
+		        	 <p:commandButton value="Cerrar Session" update=":form" icon="ui-icon-check" action="#{formularioBean.cerrarSession()}" />
+		        </h:form>
+		    </p:layoutUnit>
+		 
+		    <p:layoutUnit position="center">
+		    	
+		    	<h:form id="form">
+		    		<h2>Formulario Captura</h2>
+				    <h:panelGrid columns="2" cellpadding="5">
+				    	
+				        <h:outputLabel  value="Nombre:" style="font-weight:bold" />
+				        <p:inputText id="nombre" value="#{formularioBean.name}" />
+				        
+				        <h:outputLabel for="apellido" value="Apellido:" style="font-weight:bold" />
+				        <p:inputText id="apellido" value="#{formularioBean.apellido}" />
+				        
+				         <h:outputLabel  value="Pais:" style="font-weight:bold" />
+				        <p:selectOneMenu value="#{formularioBean.pais}">
+				        	<f:selectItem itemLabel="Seleccione una " itemValue="0"/>
+				        	<f:selectItem itemLabel="Alemania " itemValue="1"/>
+				        	<f:selectItem itemLabel="Mexico " itemValue="2"/>
+				        	<f:selectItem itemLabel="Zambia " itemValue="3"/>
+				        </p:selectOneMenu>
+				        
+				        <p:commandButton value="Aceptar" update=":form" icon="ui-icon-check" />
+				    </h:panelGrid>
+				    <h2>Datos Capturados</h2>
+				    <h:panelGrid columns="2" cellpadding="5">
+					     <h:outputLabel  value="Nombre:" style="font-weight:bold" />
+					     <p:inputText  value="#{formularioBean.name}" disabled="true" />
+					        
+					    <h:outputLabel for="apellido" value="Apellido:" style="font-weight:bold" />
+					    <p:inputText disabled="true" value="#{formularioBean.apellido}" />
+					    
+					    <h:outputLabel  value="Pais:" style="font-weight:bold" />
+					    <p:selectOneMenu value="#{formularioBean.pais}" disabled="true">
+					        	<f:selectItem itemLabel="Seleccione una " itemValue="0"/>
+					        	<f:selectItem itemLabel="Alemania " itemValue="1"/>
+					        	<f:selectItem itemLabel="Mexico " itemValue="2"/>
+					        	<f:selectItem itemLabel="Zambia " itemValue="3"/>
+					        </p:selectOneMenu>
+				    </h:panelGrid>
+				</h:form>
+		    </p:layoutUnit>
+    	
+    	</p:layout>
+    </h:body>
+</html>
