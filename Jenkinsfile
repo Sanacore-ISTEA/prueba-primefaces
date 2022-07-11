@@ -44,7 +44,7 @@ pipeline {
       }
     }
 
-    stage('Deploy to server'){
+    stage('Deploy to dev'){
       steps{
         script{
           def remote = [:]
