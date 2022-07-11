@@ -57,8 +57,8 @@ pipeline {
             //DEPLOY TO WAR
             writeFile file: 'deploy.sh', text: "cp -i /home/to_implement/war/*.war /opt/tomcat/webapps \n sleep 2m"
             sshScript remote: remote, script: 'deploy.sh'
-            sshCommand remote: remote, command: "/opt/tomcat/bin/shutdown.sh"
-            sshCommand remote: remote, command: "/opt/tomcat/bin/startup.sh"
+            sshCommand remote: remote, command: "sudo systemctl restart tomcat"
+            
 
           }
         }
