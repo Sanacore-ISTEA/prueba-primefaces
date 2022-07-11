@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment{
     ServidorMaster="ServidorSSH"
-    ServidorDeploy="192.168.0.79"
+    ServidorDeploy="192.168.0.197"
     PathDeploy="/home/to_implement"
   }
   stages {
@@ -44,7 +44,7 @@ pipeline {
       }
     }
 
-    stage('Deploy to server'){
+    stage('Deploy to PROD'){
       steps{
         script{
           def remote = [:]
