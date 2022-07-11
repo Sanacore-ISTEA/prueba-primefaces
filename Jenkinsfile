@@ -30,7 +30,7 @@ pipeline {
     // }
     // stage('Quality Gate'){
     //   steps{
-    //     timeout(time: 1, unit: 'MINUTES') {
+    //     timeout(time: 1, unit:e 'MINUTES') {
     //       waitForQualityGate abortPipeline: true, credentialsId: 'token-sonarqube'
     //     }
     //   }
